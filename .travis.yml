@@ -1,5 +1,6 @@
 language: objective-c
 xcode_project: Braintree.xcodeproj
-xcode_scheme: 
+xcode_scheme:
   - Braintree-Specs
 xcode_sdk: 7.1
+rvm: 2.1.1
