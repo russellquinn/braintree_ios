@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:mickeyreiss/xctool_wrapper.git
+  remote: https://github.com/mickeyreiss/xctool_wrapper.git
   revision: fcd65ee19f73bbc7cf7509d380aaf6a72f0cb540
   specs:
     xctool_wrapper (0.0.5)
