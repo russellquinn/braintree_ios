@@ -4,9 +4,9 @@ Pod::Spec.new do |s|
   s.summary          = "Braintree v.zero SDK. Accept payments in your app"
   s.description      = <<-DESC
                        Braintree is a full-stack payments platform for developers
-
+ 
                        This CocoaPod will help you accept credit card and PayPal payments in your iOS app.
-
+ 
                        Check out our development portal at https://developers.braintreepayments.com.
   DESC
   s.homepage         = "https://www.braintreepayments.com/v.zero"
@@ -15,15 +15,15 @@ Pod::Spec.new do |s|
   s.author           = { "Braintree" => "code@getbraintree.com" }
   s.source           = { :git => "https://github.com/braintree/braintree_ios.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/braintree'
-
+ 
   s.platform         = :ios, '7.0'
   s.requires_arc     = true
-
+ 
   s.source_files     = 'Braintree/*.{m,h}'
-
+ 
   s.compiler_flags = "-Wall -Werror -Wextra"
   s.xcconfig = { "GCC_TREAT_WARNINGS_AS_ERRORS" => "YES" }
-
+ 
   s.subspec 'Drop-In' do |s|
     s.source_files  = "Braintree/Drop-In/**/*.{h,m}"
     s.public_header_files = "Braintree/Drop-In/Public/*.h"
@@ -31,13 +31,14 @@ Pod::Spec.new do |s|
     s.dependency 'Braintree/PayPal'
     s.dependency 'Braintree/UI'
   end
-
+ 
   s.subspec 'api' do |s|
     s.source_files  = "Braintree/api/Braintree-API/**/*.{h,m}"
     s.public_header_files = "Braintree/api/Braintree-API/Public/*.h"
-    s.dependency 'Braintree/Data'
+    # Braintree Data is removed
+    # s.dependency 'Braintree/Data'
   end
-
+ 
   s.subspec 'PayPal' do |s|
     s.source_files  = "Braintree/PayPal/Braintree-PayPal/**/*.{h,m}"
     s.public_header_files = "Braintree/PayPal/Braintree-PayPal/**/*.h"
@@ -47,17 +48,11 @@ Pod::Spec.new do |s|
     s.dependency 'Braintree/api'
     s.dependency 'Braintree/UI'
   end
-
+ 
   s.subspec 'UI' do |s|
     s.source_files  = 'Braintree/UI/Braintree-Payments-UI/**/*.{h,m}'
     s.public_header_files = 'Braintree/UI/Braintree-Payments-UI/**/*.h'
     s.compiler_flags = "-Wall -Wextra"
     s.frameworks = 'UIKit'
-  end
-
-  s.subspec 'Data' do |s|
-    s.source_files = "Braintree/Data/Braintree-Data/**/*.{h,m}"
-    s.vendored_library = "Braintree/Data/Braintree-Data/libDeviceCollectorLibrary.a"
-    s.frameworks = "UIKit", "SystemConfiguration"
   end
 end
